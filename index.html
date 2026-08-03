@@ -1,73 +1,116 @@
-<!--defines document type and languange-->
 <!DOCTYPE html>
 <html lang="en">
 
-<!--important information about the document goes here-->
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Website to remotely control our watering system"> 
-    <title>Project name</title>
+    <title>Plant watering project</title>
 </head>
 
-<!--body contains everything that is shown to the user-->
 <body>
-
-<!--these elements' placements matter-->
-    <h1 style="text-align: center;">Project name</h1>
+    <h1>Plant watering project</h1>
     <hr>
-    <p>Water tank status<button id="info_water_tank">Info</button></p>
-    <span id="water_tank"></span><span>L</span>
-    <p>Adjust daily water amount<button id="info_adj">Info</button></p>
-    <button id="neg_adj">-</button>
-    <span id="adj_water"></span><span>dl</span>
-    <button id="pos_adj">+</button>
-    <button id="con_adj" style="visibility: hidden;">Confirm</button>
-    <button id="can_adj" style="visibility: hidden;">Cancel</button>
-    <p>Manually water right now<button id="info_man_water">Info</button></p>
-    <button id="neg_man">-</button>
-    <span id="man_water"></span><span>dl</span>
-    <button id="pos_man">+</button>
-    <button id="con_man" style="visibility: hidden;">Water</button>
-    <button id="can_man" style="visibility: hidden;">Cancel</button>
-    <p>Soil moisture<button id="info_sm">Info</button></p>
-    <span id="sm_percent"></span><span>%</span>
-    <p>Soil moisture over the last week<button id="info_sm_graph">Info</button></p>
-    <p>(graph)</p> <!--todo compile data from soil moisture sensors and plot a graph-->
 
-<!--dialog elements (placement is irrelevant)-->
-    <dialog id="info_adj_popup">
-        <p>Adjusting this setting will change the amount of water your plant gets each day. Any changes will apply next time your plant gets watered.</p>
-        <button class="popup_close">Close</button>
+    <p>
+        Water tank
+        <button id="wt_info">Info</button>
+        <br>
+        <span id="wt_lvl"></span>L
+    </p>
+
+    <p>
+        Time interval
+        <button id="ti_info">Info</button>
+        <br>
+        <span id="ti">(blank)</span> hours
+        <button id="ti_adj">Adjust</button>
+    </p>
+
+    <p>
+        Water amount
+        <button id="wa_info">Info</button>
+        <br>
+        <span id="wa">(blank)</span>ml
+        <button id="wa_adj">Adjust</button>
+    </p>
+
+    <p>
+        Manually water
+        <button id="mw_info">Info</button>
+        <br>
+        <button id="mw_amount">Amount...</button>
+    </p>
+
+    <p>
+        Plant's soil moisture
+        <button id="sm_info">Info</button>
+        <br>
+        <span id="sm">(blank)</span>%
+    </p>
+
+    <p>
+        Soil moisture levels this week
+        <button id="sm_plot_info">Info</button>
+        <br>
+        (blank)
+    </p>
+
+
+    <dialog id="wt_info_popup">
+        This feature shows you how much water remains in your water tank.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
     </dialog>
-    <dialog id="con_man_popup">
-        <p>Are you sure you want to manually water your plant now? This action cannot be undone.</p>
-        <button id="popup_yes">Yes</button>
-        <button id="reset_man_water"class="popup_close">No</button>
+
+    <dialog id="ti_info_popup">
+        This settings allows you to adjust how frequently you want your plant to get watered.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
     </dialog>
-    <dialog id="cooldown_man_popup">
-        <p>Please wait until the pump is finished watering before retrying.</p>
-        <button class="popup_close">Close</button>
+    <dialog id="ti_adj_popup">
+        <label for ="ti_input">How long between each watering?:</label>
+        <input type="number" id="ti_input" step="1" min="1">
+        <br>
+        <button id="ti_save">Save</button>
+        <button id="ti_cancel">Cancel</button>
     </dialog>
-    <dialog id="info_wt_popup">
-        <p>Your water tank is dynamically updated by weighing, ensuring accurate measurments of the tank's status and of amount that is being watered.</p>
-        <button class="popup_close">Close</button>
+
+    <dialog id="wa_info_popup">
+        This setting allows you to adjust how much water your plant recieves each time it gets watered.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
     </dialog>
-    <dialog id="info_man_water_popup">
-        <p>Use this feature if you want to manually water your plant remotely. Note that this does not override your daily water amount.</p>
-        <button class="popup_close">Close</button>
+    <dialog id="wa_adj_popup">
+        <label for="wa_input">How many ml for each watering?:</label>
+        <input type="number" id="wa_input" step="1" min="100">
+        <br>
+        <button id="wa_save">Save</button>
+        <button id="wa_cancel">Cancel</button>
     </dialog>
-    <dialog id="info_sm_popup">
-        <p>The level of moisture in your plant's soil can help you find out how much water your specific plant needs.</p>
-        <button class="popup_close">Close</button>
+
+    <dialog id="mw_info_popup">
+        This feature allows you to manually water your plant right now.
     </dialog>
-    <dialog id="info_sm_graph_popup">
-        <p>This graph shows the moisture level of your plant's soil over the last week. It may be useful to catch trends of higher or lower consumation of water, and help you adapt.</p>
-        <button class="popup_close">Close</button>
+
+    <dialog id="sm_info_popup">
+        This feature shows you how much moisture is currently in your plant's soil. You can use it to determine how much water your plant needs.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
     </dialog>
-<!--runs our index.js file, keep at bottom of body so it can call for all defined IDs above-->
+
+    <dialog id="sm_plot_info_popup">
+        This graph shows you your plant's soil moisture levels this week. You can use it to spot trends in your plant's water consumation.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+
     <script src="index.js"></script>
 </body>
-</html>
