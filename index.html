@@ -26,7 +26,7 @@
         <button id="ti_info">Info</button>
         <br>
         <span id="ti">(blank)</span> hours
-        <button id="ti_adj">Adjust</button>
+        <button id="ti_btn">Adjust</button>
     </p>
 
     <p>
@@ -34,14 +34,14 @@
         <button id="wa_info">Info</button>
         <br>
         <span id="wa">(blank)</span>ml
-        <button id="wa_adj">Adjust</button>
+        <button id="wa_btn">Adjust</button>
     </p>
 
     <p>
         Manually water
         <button id="mw_info">Info</button>
         <br>
-        <button id="mw_amount">Amount...</button>
+        <button id="mw_btn">Amount...</button>
     </p>
 
     <p>
@@ -72,8 +72,8 @@
             <button>Close</button>
         </form>
     </dialog>
-    <dialog id="ti_adj_popup">
-        <label for ="ti_input">How long between each watering?:</label>
+    <dialog id="ti_btn_popup">
+        <label for ="ti_input">How many hours between each watering?:</label>
         <input type="number" id="ti_input" step="1" min="1">
         <br>
         <button id="ti_save">Save</button>
@@ -86,8 +86,8 @@
             <button>Close</button>
         </form>
     </dialog>
-    <dialog id="wa_adj_popup">
-        <label for="wa_input">How many ml for each watering?:</label>
+    <dialog id="wa_btn_popup">
+        <label for="wa_input">How many ml for each watering?: (min 100ml)</label>
         <input type="number" id="wa_input" step="1" min="100">
         <br>
         <button id="wa_save">Save</button>
@@ -96,6 +96,22 @@
 
     <dialog id="mw_info_popup">
         This feature allows you to manually water your plant right now.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+    <dialog id="mw_btn_popup">
+        <label for="mw_input">How many ml to send to your plant right now?: (min. 100ml)</label>
+        <input type="number" id="mw_input" step="1" min="100">
+        <br>
+        <button id="mw_conf">Confirm</button>
+        <button id="mw_canc">Cancel</button>
+    </dialog>
+    <dialog id="mw_verify_popup">
+        Are you sure you want to water your plant right now? This action cannot be undone.
+        <br>
+        <button id="mw_yes">Yes</button>
+        <button id="mw_no">No</button>
     </dialog>
 
     <dialog id="sm_info_popup">
