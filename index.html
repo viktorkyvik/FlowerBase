@@ -7,65 +7,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Website to remotely control our watering system"> 
-    <title>Plant watering project</title>
+    <title>FLOWERBASE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Poetsen+One&family=Varela+Round&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>Plant watering project</h1>
-    <hr>
+    <h1 class="col">FLOWERBASE</h1>
 
-    <p>
-        Water tank
+    <div class="col" id = "welcome">
+        WELCOME BACK
+    </div>
+
+    <div class="col" id="h_level">
+        Plant's soil moisture
+        <button id="sm_info">Info</button>
+        <div class="row">
+            <span id="sm"></span>
+            <span id="pro">
+                %
+            </span>
+        </div>
+    </div>
+
+    <div class="col" id="sm_plot">
+        This week's report
+        <button id="sm_plot_info">Info</button>
+    </div>
+
+    <div class="col" id="wt_box">
+        Water tank status
         <button id="wt_info">Info</button>
-        <br>
         <span id="wt_lvl"></span>L
-    </p><br>
+    </div>
 
-    <p id="type_ti" style="display: block;">
+
+
+
+
+
+    <div id="type_ti" style="display: block;">
         Water at time interval
-        <button id="ti_info">Info</button>
-        <br>
+        <button id="ti_info">Info</button>  
         <span id="ti"></span> hours
         <button id="ti_btn">Adjust</button>
         <button id="changeto_smt">Change</button>
-    </p>
-    <p id="type_smt" style="display: none;">
+    </div>
+
+    <div id="type_smt" style="display: none;">
         Water at soil moisture percentage
         <button id="smt_info">Info</button>
-        <br>
+        
         <span id="smt"></span> %
         <button id="smt_btn">Adjust</button>
         <button id="changeto_ti">Change</button>
-    </p><br>
+    </div>
 
-    <p>
+    <div>
         Water amount
         <button id="wa_info">Info</button>
-        <br>
         <span id="wa">(blank)</span>ml
         <button id="wa_btn">Adjust</button>
-    </p><br>
+    </div>
 
-    <p>
+    <div>
         Manually water
         <button id="mw_info">Info</button>
-        <br>
         <button id="mw_btn">Amount...</button>
-    </p><br>
+    </div>
 
-    <p>
-        Plant's soil moisture
-        <button id="sm_info">Info</button>
-        <br>
-        <span id="sm">(blank)</span>%
-    </p><br>
 
-    <p>
-        Soil moisture levels this week
-        <button id="sm_plot_info">Info</button>
-        <br>
-        (blank)
-    </p><br>
+
+
+
 
 
     <dialog id="wt_info_popup">
@@ -81,9 +97,10 @@
             <button>Close</button>
         </form>
     </dialog>
+
     <dialog id="ti_btn_popup">
         <label for ="ti_input">How many hours between each watering? (min. 1 hour)</label>
-        <br>
+        
         <input type="number" id="ti_input" step="1" min="1">
         <button id="ti_save">Save</button>
         <button id="ti_cancel">Cancel</button>
@@ -97,7 +114,7 @@
     </dialog>
     <dialog id="smt_btn_popup">
         <label for ="smt_input">At what soil moisture percent level should your plant get watered? (5% - 100%)</label>
-        <br>
+        
         <input type="number" id="smt_input" step="1" min="5" max="100">
         <button id="smt_save">Save</button>
         <button id="smt_cancel">Cancel</button>        
@@ -111,7 +128,7 @@
     </dialog>
     <dialog id="wa_btn_popup">
         <label for="wa_input">How many ml of water should be pumped when the plant gets watered? (100ml - 2000ml)</label>
-        <br>
+        
         <input type="number" id="wa_input" step="1" min="100">
         <button id="wa_save">Save</button>
         <button id="wa_cancel">Cancel</button>
@@ -125,14 +142,14 @@
     </dialog>
     <dialog id="mw_btn_popup">
         <label for="mw_input">How many ml to send to your plant right now? (100ml - 2000ml)</label>
-        <br>
+        
         <input type="number" id="mw_input" step="1" min="100">
         <button id="mw_conf">Confirm</button>
         <button id="mw_canc">Cancel</button>
     </dialog>
     <dialog id="mw_verify_popup">
         Are you sure you want to water your plant right now? This action cannot be undone.
-        <br>
+        
         <button id="mw_yes">Yes</button>
         <button id="mw_no">No</button>
     </dialog> 
