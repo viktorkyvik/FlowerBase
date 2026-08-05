@@ -12,24 +12,45 @@ body, button{
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items:baseline;
-    justify-content: center;
+
+}
+
+.row > :first-child {
+    grid-column: 2;
+}
+
+
+.row > :nth-child(2) {
+    grid-column: 3;
+    justify-self: start;
+}
+
+button{
+    cursor: pointer;
+}
+.round{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    margin: left 20px;
 }
 
 h1 {
   font-family: "Chango", "Poetsen One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   border-bottom: 2px solid #0a8114;
   margin-top:60px;
   margin-bottom: 100px;
 }
 
 #welcome {
-    font-size:3rem;
+    font-size:2.5rem;
     margin-bottom:20px;
 }
 
@@ -44,8 +65,15 @@ h1 {
     margin-bottom: 1px;
 }
 
-#pro {
+#per {
     font-size:7rem;
+}
+
+.percent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
 
 #sm_plot{
@@ -55,19 +83,40 @@ h1 {
 
 #wt_box{
     font-size: 2rem;
+    margin-bottom:40px;
 }
 
-/*#wt_box {
-    position: absolute;
-    top: 50vw;
-    left: 50vw;
-    width: 90vw;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 15px;
-    border: 7px solid #0a8114;
-    border-radius: 20px;
-    background-color: #14d82e;
-    color: white;
-}*/
+#liter{
+    margin-bottom:80px;
+}
+#type_ti {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#type_smt {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#changeto_smt {
+    width:60%
+}
+
+#wt_amo {
+    font-size: 1.5rem;
+    margin-bottom: 35px;
+}   
+
+#man_wt {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+}
+
+
+#connect {
+    margin-bottom:15px;
+}
+
+
 
