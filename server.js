@@ -189,7 +189,21 @@ app.get("/api/readings/latest", (req, res) => {
 
     res.json(reading);
 })
+//gets today's sensor data grouped by hour
+app.get("/api/readings/today", (req, res) => {
+    
+    const readings = db.prepare(`
+        SELECT
+            strftime('%H', recorded_at, 'localtime') AS hour,
+            AVG(soil_moisture) AS avg_soil_moisture
+        FROM sensor_readings
+        WHERE date(recorded_at, 'localtime') = date('now', 'localtime')
+        GROUP BY hour
+        ORDER BY hour ASC
+    `).all();
 
+    res.json(readings);
+});
 
 //record watering
 app.post("/api/watering", (req, res) => {
