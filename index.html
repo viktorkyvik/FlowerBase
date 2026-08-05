@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Poetsen+One&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=info" />
+
 
 </head>
 
@@ -22,61 +24,84 @@
     </div>
 
     <div class="col" id="h_level">
-        Plant's soil moisture
-        <button id="sm_info">Info</button>
         <div class="row">
+            <div> Plants's soil moisture</div>
+            <button class= "round" id="sm_info">i</button>
+        </div>
+        <div class="percent">
             <span id="sm"></span>
-            <span id="pro">%</span>
+            <span id="per">%</span>
         </div>
     </div>
 
+<<<<<<< Updated upstream
     <div class="col">
         <button id="sm_plot_btn">This week's report</button>
         <button id="sm_plot_info">Info</button>
+=======
+    <div class="col" id="sm_plot">
+        <div class="row">
+            <div>this week's report</div>
+            <button class= "round" id="sm_plot_info">i</button>
+        </div>
+>>>>>>> Stashed changes
     </div>
 
     <div class="col" id="wt_box">
-        Water tank status
-        <button id="wt_info">Info</button>
-        <span id="wt_lvl"></span>L
+        <div class="row">
+            <div>Water tank status</div>
+            <button class= "round" id="wt_info">i</button>
+            <br>
+        <div class="row" id="liter">
+            <span id="wt_lvl"></span>
+            <div>L</div>
+        </div>
+    </div>
+
+    <div id="am-wt">
+        Automatic water
     </div>
 
     <div id="type_ti" style="display: block;">
         Water at time interval
-        <button id="ti_info">Info</button>  
+        <button class= "round" id="ti_info">i</button>
+        <br> 
         <span id="ti"></span> hours
         <button id="ti_btn">Adjust</button>
-        <button id="changeto_smt">Change</button>
+        <br>
+        <button id="changeto_smt">Change</button> 
     </div>
 
     <div id="type_smt" style="display: none;">
         Water at soil moisture percentage
-        <button id="smt_info">Info</button>
-        
+        <button class= "round" id="smt_info">i</button>
+        <br>
         <span id="smt"></span> %
         <button id="smt_btn">Adjust</button>
         <button id="changeto_ti">Change</button>
     </div>
 
-    <div>
+    <div id="wt_amo">
         Water amount
-        <button id="wa_info">Info</button>
+        <button class= "round" id="wa_info">i</button>
+        <br>
         <span id="wa">(blank)</span>ml
         <button id="wa_btn">Adjust</button>
     </div>
 
-    <div>
+    <div id="man_wt">
         <button id="mw_btn">Manually water</button>
-        <button id="mw_info">Info</button>
+        <button class= "round" id="mw_info">i</button>
     </div>
 
-    <div>
+    <div id = "connect">
         Connection
-        <button id="connect_info">Info</button>
+        <button class= "round" id="connect_info">i</button>
+        <br>
         <span id="connection">(ID of esp32 then "live" or "no connection")</span>
     </div>
 
-    <div>
+    <div id="setup">
         <button id="setup_btn">Set up or switch ESP32 connection</button>
     </div>
 
