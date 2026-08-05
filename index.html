@@ -2,7 +2,7 @@
 <html lang="en">
 <!--sophis test commit-->
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styl.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +26,7 @@
         <button id="sm_info">Info</button>
         <div class="row">
             <span id="sm"></span>
-            <span id="pro">
-                %
-            </span>
+            <span id="pro">%</span>
         </div>
     </div>
 
@@ -42,11 +40,6 @@
         <button id="wt_info">Info</button>
         <span id="wt_lvl"></span>L
     </div>
-
-
-
-
-
 
     <div id="type_ti" style="display: block;">
         Water at time interval
@@ -73,12 +66,19 @@
     </div>
 
     <div>
-        Manually water
+        <button id="mw_btn">Manually water</button>
         <button id="mw_info">Info</button>
-        <button id="mw_btn">Amount...</button>
     </div>
 
+    <div>
+        Connection
+        <button id="connect_info">Info</button>
+        <span id="connection">(ID of esp32 then "live" or "no connection")</span>
+    </div>
 
+    <div>
+        <button id="setup_btn">Set up or switch ESP32 connection</button>
+    </div>
 
 
 
