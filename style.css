@@ -1,11 +1,22 @@
-body, button{
+body{
     text-align: center;
     font-family: "Varela Round", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.2rem;
-    background-image: linear-gradient(#84B179, #A2CB8B);
+    background-image: radial-gradient(circle at top left,#cfe2a2, #273824);
     
+}
+
+button{
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    background-color: #8cb179;
+    color:#ffffff;
+    border: none;
 }
 
 .col {
@@ -43,9 +54,18 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 2.4rem;
-  border-bottom: 2px solid #0a8114;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
   margin-top:60px;
   margin-bottom: 100px;
+}
+
+div {
+    color:#ffffff;
+}
+
+span {
+    color: #ffffff;
 }
 
 #welcome {
@@ -56,6 +76,8 @@ h1 {
 #h_level {
     font-size: 1.5rem;
     margin-bottom:20px;
+    background-color:#76856f;
+    border-radius: 200px;
     
 }
 
@@ -89,7 +111,7 @@ h1 {
     margin-bottom:80px;
 }
 
-#am-wt {
+#am_wt{
     font-size:2rem;
 }
 #type_ti {
