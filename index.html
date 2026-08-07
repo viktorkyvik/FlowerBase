@@ -42,7 +42,8 @@
         <div class="row">
             <div>Water tank status</div>
             <button class= "round" id="wt_info">i</button>
-            <br>
+        </div>
+        <br>
         <div class="row" id="liter">
             <span id="wt_lvl"></span>
             <div>L</div>
@@ -54,40 +55,58 @@
     </div>
 
     <div id="type_ti" style="display: block;">
-        Water at time interval
-        <button class= "round" id="ti_info">i</button>
+        <div class = "row">
+            <div>Water at time interval</div>
+            <button class= "round" id="ti_info">i</button>
+        </div>
         <br> 
-        <span id="ti"></span> hours
-        <button id="ti_btn">Adjust</button>
+        <div class = "row">
+            <span id="ti"></span> 
+            <div>Hours</div>    
+            <button id="ti_btn">Adjust</button>
+        </div>
         <br>
-        <button id="changeto_smt">Change</button> 
+        <button class="change" id="changeto_smt">Change</button> 
     </div>
 
     <div id="type_smt" style="display: none;">
-        Water at soil moisture percentage
-        <button class= "round" id="smt_info">i</button>
+        <div class = "row">
+            <div>Water at soil moisture percentage</div>
+            <button class= "round" id="smt_info">i</button>
+        </div>
         <br>
-        <span id="smt"></span> %
-        <button id="smt_btn">Adjust</button>
-        <button id="changeto_ti">Change</button>
+        <div class = "row">
+            <span id="smt"></span> 
+            <span>%</span>
+            <button id="smt_btn">Adjust</button>
+        </div>
+        <br>
+        <button class="change" id="changeto_ti">Change</button>
     </div>
 
     <div id="wt_amo">
-        Water amount
-        <button class= "round" id="wa_info">i</button>
+        <div class = "row">
+            <div>Water amount</div>
+            <button class= "round" id="wa_info">i</button>
+        </div>
         <br>
-        <span id="wa">(blank)</span>ml
-        <button id="wa_btn">Adjust</button>
+        <div class = "row">
+            <span id="wa">(blank)</span>
+            <span>ml</span>
+            <button id="wa_btn">Adjust</button>
+        </div>
     </div>
 
-    <div id="man_wt">
+    <div id="man_wt" class = "row">
         <button id="mw_btn">Manually water</button>
         <button class= "round" id="mw_info">i</button>
     </div>
 
     <div id = "connect">
-        Connection
-        <button class= "round" id="connect_info">i</button>
+        <div class = "row">
+            <div>Connection</div>
+            <button class= "round" id="connect_info">i</button>
+        </div>
         <br>
         <span id="connection">(ID of esp32 then "live" or "no connection")</span>
     </div>
