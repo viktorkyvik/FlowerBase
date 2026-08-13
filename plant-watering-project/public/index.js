@@ -299,6 +299,6 @@
     })
 
     loadSettings();
-    setInterval(sendFakeSensorReading, 5000);
+    //setInterval(sendFakeSensorReading, 5000); disabled for production, only used for testing
     loadLatestReading();
     setInterval(loadLatestReading, 5000);
