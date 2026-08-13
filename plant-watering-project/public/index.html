@@ -18,12 +18,12 @@
     <h1 class="col">FlowerBase</h1>
 
     <div class="col" id = "welcome">
-        WELCOME BACK
+        WELCOME BACK!   
     </div>
 
     <div class="col" id="h_level">
         <div class="row">
-            <div> Plants's soil moisture</div>
+            <div> Plants's hydration level</div>
             <button class= "round" id="sm_info">i</button>
         </div>
         <div class="percent">
@@ -105,15 +105,11 @@
 
     <div id = "connect">
         <div class = "row">
-            <div>Connection</div>
+            <div>Connection status</div>
             <button class= "round" id="connect_info">i</button>
         </div>
         <br>
         <span id="connection">(ID of esp32 then "live" or "no connection")</span>
-    </div>
-
-    <div id="setup">
-        <button id="setup_btn">Set up or switch ESP32 connection</button>
     </div>
 
 
@@ -121,14 +117,14 @@
 
 
     <dialog id="wt_info_popup">
-        This feature shows you how much water remains in your water tank.
+        This shows how much water is left in the water tank. If the water tank is empty, your plant will not get watered automatically or manually. Please refill the water tank if empty.
         <form method="dialog">
             <button>Close</button>
         </form>
     </dialog>
 
     <dialog id="ti_info_popup">
-        This settings allows you to adjust how frequently you want your plant to get watered. Click "Change" to automatically water when moisture levels get below a threshold instead.
+        This settings allows you to adjust how frequently you want your plant to get watered. Click "Change" to automatically water when hydration level gets below a defined threshold instead.
         <form method="dialog">
             <button>Close</button>
         </form>
@@ -143,13 +139,13 @@
     </dialog>
 
     <dialog id="smt_info_popup">
-        This setting allows you to set a threshold for which the plant gets watered whenever the moisture level reaches it. Click "Change" to to automatically water after a set time interval instead.
+        This settings allows you to adjust at what soil moisture percentage your plant should get watered. Click "Change" to automatically water at a time interval instead.
         <form method="dialog">
             <button>Close</button>
         </form> 
     </dialog>
     <dialog id="smt_btn_popup">
-        <label for ="smt_input">At what soil moisture percent level should your plant get watered? (5% - 100%)</label>
+        <label for ="smt_input">At what hydration level should your plant get watered? (5% - 100%)</label>
         
         <input type="number" id="smt_input" step="1" min="5" max="100">
         <button id="smt_save">Save</button>
@@ -157,13 +153,13 @@
     </dialog>
 
     <dialog id="wa_info_popup">
-        This setting allows you to adjust how much water your plant recieves each time it gets watered.
+        Adjusting this setting allows you to change how much water your plant receives each time it gets watered. This settings is used for both types of automatic watering (time interval and hydration level threshold).
         <form method="dialog">
             <button>Close</button>
         </form>
     </dialog>
     <dialog id="wa_btn_popup">
-        <label for="wa_input">How many ml of water should be pumped when the plant gets watered? (100ml - 2000ml)</label>
+        <label for="wa_input">How much water should your plant receive each time it gets watered? (100ml - 2000ml)</label>
         
         <input type="number" id="wa_input" step="1" min="100">
         <button id="wa_save">Save</button>
@@ -171,31 +167,36 @@
     </dialog>
 
     <dialog id="mw_info_popup">
-        This feature allows you to manually water your plant right now.
+        Manually watering your plant allows you to send water to your plant at any time, on top of the automatic watering schedule. This is only recommended if your plant is in danger of dying or if testing.
         <form method="dialog">
             <button>Close</button>
         </form>
     </dialog>
     <dialog id="mw_btn_popup">
-        <label for="mw_input">How many ml to send to your plant right now? (100ml - 2000ml)</label>
+        <label for="mw_input">How much water do you want to send to your plant right now? (100ml - 2000ml)</label>
         
         <input type="number" id="mw_input" step="1" min="100">
         <button id="mw_conf">Confirm</button>
         <button id="mw_canc">Cancel</button>
     </dialog>
     <dialog id="mw_verify_popup">
-        Are you sure you want to water your plant right now? This action cannot be undone.
+        This action will send water to your plant right now. It is only recommended to do this if your plant is in danger of dying or if testing. Are you sure you want to continue?
         
         <button id="mw_yes">Yes</button>
         <button id="mw_no">No</button>
     </dialog> 
 
     <dialog id="sm_info_popup">
-        This feature shows you how much moisture is currently in your plant's soil. You can use it to determine how much water your plant needs.
+        Your plant's hydration level is the average Volumetric Water Content (VWC) of 4 soil moisture sensors. VWC is measured by dividing the volume of water by the total volume of the soil. The higher the percentage, the more hydrated your plant is. Please research your plant's ideal VWC to ensure it is healthy (look up "x plant VWC"). If the VWC is too low, your plant may be at risk of dying. If the VWC is too high, your plant may be at risk of root rot.
         <form method="dialog">
             <button>Close</button>
         </form>
     </dialog>
+    <dialog id="connect_info_popup">
+        This shows the connection status of your watering system. If status is "No connection", please check your watering system's power and Wi-Fi connection. "Live" means that your watering system is connected to the internet and is able to send data to this website.
+        <form method="dialog">
+            <button>Close</button>
+        </form>
 
     <script src="index.js"></script>
 </body>
