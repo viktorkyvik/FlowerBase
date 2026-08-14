@@ -218,8 +218,18 @@ async function loadTodayData() {
     );
 }
 
+//function to mark currently selected button
+function setActiveButton(activeBtn) {
+    week_btn.classList.remove("active");
+    today_btn.classList.remove("active");
+    
+    activeBtn.classList.add("active");
+}
+
 //creates graph for past week on page load
 loadWeekData();
+setActiveButton(week_btn);
+
 
 //buttons
 sm_plot_info.addEventListener("click", () => {
@@ -227,7 +237,9 @@ sm_plot_info.addEventListener("click", () => {
 });
 week_btn.addEventListener("click", () => {
     loadWeekData();
+    setActiveButton(week_btn);
 });
 today_btn.addEventListener("click", () => {
     loadTodayData();
+    setActiveButton(today_btn);
 });

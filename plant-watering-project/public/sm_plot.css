@@ -1,0 +1,19 @@
+.active {
+    background-color:#5b7c4b;
+
+}
+
+.sm_plot_btns{
+    display: grid;
+    grid-template-columns: 1fr auto auto 1fr;
+    align-items:baseline;
+    gap: 5px; 
+}
+
+.sm_plot_btns > :first-child {
+    grid-column: 2;
+}
+.sm_plot_btns > :nth-child(3) {
+    justify-self: start;
+}
+

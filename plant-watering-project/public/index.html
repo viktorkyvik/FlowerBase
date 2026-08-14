@@ -33,9 +33,8 @@
     </div>
 
     <div class="col" id="sm_plot">
-        <div class="row">
-            <div><a href="sm_plot.html"><button>Statistics</button></a></div>
-        </div>
+        <div><a href="sm_plot.html"><button id= sm_btn>Statistics</button></a></div>
+
     </div>
 
     <div class="col" id="wt_box">
@@ -50,58 +49,59 @@
         </div>
     </div>
 
-    <div id="am_wt">
-        <div>Automatic water</div>
+  
+        <div id="am_wt">Automatic water</div>
 
 
         <div id="type_ti" style="display: block;">
             <div class = "row">
-                <div>Water at time interval</div>
+                <div id="type_ti_h">Water at time interval</div>
                 <button class= "round" id="ti_info">i</button>
             </div>
             <br> 
-            <div class = "row">
+            <div class = "row_c">
                 <span id="ti"></span> 
                 <div>Hours</div>    
-                <button id="ti_btn">Adjust</button>
             </div>
+            <button id="ti_btn">Adjust</button>
             <br>
             <button class="change" id="changeto_smt">Change</button> 
         </div>
 
         <div id="type_smt" style="display: none;">
             <div class = "row">
-                <div>Water at soil moisture percentage</div>
+                <div id="wt_mp">Water at hydration level</div>
                 <button class= "round" id="smt_info">i</button>
             </div>
             <br>
-            <div class = "row">
+            <div class = "row_c">
                 <span id="smt"></span> 
                 <span>%</span>
-                <button id="smt_btn">Adjust</button>
             </div>
+            <button id="smt_btn">Adjust</button>
             <br>
             <button class="change" id="changeto_ti">Change</button>
         </div>
 
         <div id="wt_amo">
             <div class = "row">
-                <div>Water amount</div>
+                <div id="wt_amo_h">Water amount</div>
                 <button class= "round" id="wa_info">i</button>
             </div>
             <br>
-            <div class = "row">
+            <div class = "row_c">
                 <span id="wa">(blank)</span>
                 <span>ml</span>
-                <button id="wa_btn">Adjust</button>
             </div>
+            <button id="wa_btn">Adjust</button>
         </div>
-    </div>
+
 
     <div id="man_wt" class = "row">
-        <button id="mw_btn">Manually water</button>
+        <div id="man">Manually water</div>
         <button class= "round" id="mw_info">i</button>
     </div>
+    <button id="mw_btn">Click to water</button>
 
     <div id = "connect">
         <div class = "row">

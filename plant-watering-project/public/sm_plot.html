@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sm_plot.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +15,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <button class="round" id="sm_plot_info">i</button>
-    
-    <div>
+    <div class="sm_plot_btns">  
+
         <button id="week_btn">Past week</button> 
 
         <button id="today_btn">Today</button>
+    
+        <button class="round" id="sm_plot_info">i</button>
+
     </div>
 
     <div>
@@ -27,7 +30,7 @@
     </div>
 
     <div>
-        <a href="index.html"><button>Back to main page</button</a>
+        <a href="index.html"><button>Back to main page</button></a>
     </div>
 
     <dialog id="sm_plot_info_popup">
