@@ -50,7 +50,7 @@
     </div>
 
   
-        <div id="am_wt">Automatic water</div>
+        <div id="am_wt">Automatic watering</div>
 
 
         <div id="type_ti" style="display: block;">
@@ -98,7 +98,7 @@
 
 
     <div id="man_wt" class = "row">
-        <div id="man">Manually water</div>
+        <div id="man">Manual watering</div>
         <button class= "round" id="mw_info">i</button>
     </div>
     <button id="mw_btn">Click to water</button>
@@ -133,9 +133,13 @@
     <dialog id="ti_btn_popup">
         <label for ="ti_input">How many hours between each watering? (min. 1 hour)</label>
         
+        <br>
         <input type="number" id="ti_input" step="1" min="1">
-        <button id="ti_save">Save</button>
-        <button id="ti_cancel">Cancel</button>
+        <br>
+        <div id="row">
+            <button id="ti_save">Save</button>
+            <button id="ti_cancel">Cancel</button>
+        </div>
     </dialog>
 
     <dialog id="smt_info_popup">
@@ -147,9 +151,13 @@
     <dialog id="smt_btn_popup">
         <label for ="smt_input">At what hydration level should your plant get watered? (5% - 100%)</label>
         
+        <br>
         <input type="number" id="smt_input" step="1" min="5" max="100">
-        <button id="smt_save">Save</button>
-        <button id="smt_cancel">Cancel</button>        
+        <br>
+        <div id="row">
+            <button id="smt_save">Save</button>
+            <button id="smt_cancel">Cancel</button> 
+        </div>         
     </dialog>
 
     <dialog id="wa_info_popup">
@@ -160,10 +168,13 @@
     </dialog>
     <dialog id="wa_btn_popup">
         <label for="wa_input">How much water should your plant receive each time it gets watered? (100ml - 2000ml)</label>
-        
+        <br>
+
         <input type="number" id="wa_input" step="1" min="100">
-        <button id="wa_save">Save</button>
-        <button id="wa_cancel">Cancel</button>
+        <div id="row">
+            <button id="wa_save">Save</button>
+            <button id="wa_cancel">Cancel</button>
+        </div>
     </dialog>
 
     <dialog id="mw_info_popup">
@@ -174,16 +185,23 @@
     </dialog>
     <dialog id="mw_btn_popup">
         <label for="mw_input">How much water do you want to send to your plant right now? (100ml - 2000ml)</label>
+
+        <br>
         
         <input type="number" id="mw_input" step="1" min="100">
-        <button id="mw_conf">Confirm</button>
-        <button id="mw_canc">Cancel</button>
+        <br>
+        <div id="row">
+            <button id="mw_conf">Confirm</button>
+            <button id="mw_canc">Cancel</button>
+        </div>
     </dialog>
     <dialog id="mw_verify_popup">
         This action will send water to your plant right now. It is only recommended to do this if your plant is in danger of dying or if testing. Are you sure you want to continue?
-        
-        <button id="mw_yes">Yes</button>
-        <button id="mw_no">No</button>
+        <br>
+        <div id="row">
+            <button id="mw_yes">Yes</button>
+            <button id="mw_no">No</button>
+        </div>
     </dialog> 
 
     <dialog id="sm_info_popup">
