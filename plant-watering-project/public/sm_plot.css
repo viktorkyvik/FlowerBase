@@ -16,4 +16,9 @@
 .sm_plot_btns > :nth-child(3) {
     justify-self: start;
 }
-
+ /*
+.chart_container{
+    width: 100%;
+    height: 1500px;
+    margin: 0 auto;
+}*/

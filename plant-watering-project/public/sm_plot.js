@@ -9,6 +9,11 @@ const chartCanvas = document.getElementById("moistureChart");
 
 let moistureChart = null;
 
+//some chart settings
+Chart.defaults.font.family = "'Varela Round', sans-serif";
+Chart.defaults.font.size = 14;
+Chart.defaults.color ="#ffff";
+
 //function to get all readings from the server
 async function getAllReadings() {
 
@@ -118,16 +123,26 @@ function createChart(labels, values, title) {
         data: {
             labels: labels,
 
-            datasets: [{
-                label: "Soil Moisture (%)",
-                data: values,
+            datasets: [
+                {
+                    label: "Soil Moisture (%)",
+                    data: values,
 
-                borderWidth: 3,
+                    borderColor: "rgba(255, 255, 255, 1)",
+                    backgroundColor: "rgba(93, 182, 230, 0.88)",
+                    fill: true,
 
-                tension: 0.3,
+                    borderWidth: 3,
+                    tension: 0.3,
 
-                spanGaps: true,
-            }]
+                    spanGaps: true,
+
+                    pointBackgroundColor: "rgba(255, 255, 255, 1)",
+                    pointBorderColor: "#273824",
+                    pointRadius: 5,
+                    pointHoverRadius: 8,
+                }
+        ]
         },
 
         options: {
@@ -142,6 +157,12 @@ function createChart(labels, values, title) {
                     title: {
                         display: true,
                         text: "Time"
+                    },
+                    grid: { 
+                        color: "rgba(255, 255, 255, 0.73)"
+                    },
+                    ticks: {
+                        color: "rgba(255, 255, 255, 1)"
                     }
                 },
 
@@ -153,7 +174,14 @@ function createChart(labels, values, title) {
 
                     beginAtZero: true,
 
-                    suggestedMax: 100
+                    suggestedMax: 100,
+
+                    grid: { 
+                        color: "rgba(255, 255, 255, 0.73)"
+                    },
+                    ticks: {
+                        color: "rgba(255, 255, 255, 1)"
+                    }
                 }
             },
 
@@ -162,10 +190,12 @@ function createChart(labels, values, title) {
                 title: {
                     display: true,
                     text: title,
+                    color: "#ffff", 
+                    font: { size: 18, weight:"bold"}
                 },
 
                 legend: {
-                    display: true,
+                    display: false,
                 }
             }
         }
