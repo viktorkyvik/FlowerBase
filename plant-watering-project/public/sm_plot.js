@@ -12,7 +12,7 @@ let moistureChart = null;
 //some chart settings
 Chart.defaults.font.family = "'Varela Round', sans-serif";
 Chart.defaults.font.size = 14;
-Chart.defaults.color ="#ffff";
+Chart.defaults.color ="#5b7c4b";
 
 //function to get all readings from the server
 async function getAllReadings() {
